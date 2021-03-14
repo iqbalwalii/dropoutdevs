@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Acme&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&display=swap");
 @-webkit-keyframes fromLeft {
   0% {
     opacity: 0;
@@ -35,10 +37,92 @@
   }
 }
 
+html, body {
+  scroll-behavior: smooth;
+}
+
 body {
   background-image: linear-gradient(45deg, #ffca58 0%, #8b49ff 100.2%);
   font-family: 'Bangers', cursive;
   position: relative;
+}
+
+section {
+  text-align: center;
+}
+
+section .btn_more {
+  background: rgba(255, 198, 9, 0.979);
+  padding: 1rem 2.5rem;
+  font-size: 1.5rem;
+  border-radius: 10px;
+}
+
+.headings {
+  font-family: 'Nanum Myeongjo', serif;
+  font-size: 3rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.cards {
+  padding: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.cards .card {
+  border-radius: 20px;
+  padding: 1rem;
+  text-align: center;
+  width: 23vw;
+  height: 70vh;
+  background: rgba(255, 255, 255, 0.205);
+}
+
+.cards .card img {
+  -webkit-filter: brightness(75%);
+          filter: brightness(75%);
+  border-radius: 15px;
+  width: 100%;
+}
+
+.cards .card .project_name {
+  font-size: 2rem;
+  margin-bottom: .8rem;
+  font-family: Acme, sans-serif;
+}
+
+.cards .card .project_description {
+  margin-top: .5rem;
+  font-family: 'Caveat', cursive;
+  font-size: 1.6rem;
+}
+
+.cards .card a {
+  background: rgba(255, 198, 9, 0.979);
+  padding: .6rem 1.3rem;
+  border-radius: 10px;
+  -webkit-backdrop-filter: blur(30px);
+          backdrop-filter: blur(30px);
+}
+
+.cards .card .buttons {
+  display: none;
+}
+
+.cards .card:hover .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .navbar__menu {
@@ -98,7 +182,7 @@ header img {
 
 header .hero__heading {
   width: 40vw;
-  font-size: 1.8rem;
+  font-size: 2.8rem;
   font-family: 'Acme', sans-serif;
   color: #0f0f0fe1;
 }
@@ -106,9 +190,6 @@ header .hero__heading {
 .btn-grad {
   background-image: -webkit-gradient(linear, left top, right top, color-stop(51%, #fed231), to(#bdb000));
   background-image: linear-gradient(to right, #fed231 51%, #bdb000 100%);
-}
-
-.btn-grad {
   margin: 10px;
   padding: 8px 15px;
   text-align: center;
@@ -120,12 +201,12 @@ header .hero__heading {
   color: #302e2e;
   border-radius: 10px;
   display: block;
+  font-size: 1.5rem;
 }
 
 .btn-grad:hover {
   background-position: right center;
   /* change the direction of the change here */
-  color: #353232;
   text-decoration: none;
 }
 
@@ -168,6 +249,45 @@ header .hero__heading {
 
 .navbar .nav__links > a:hover::after {
   width: 120%;
+}
+
+#services .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 16vw;
+  height: initial;
+  margin-bottom: 1.5rem;
+  -webkit-transition: all .3s linear;
+  transition: all .3s linear;
+}
+
+#services .card:hover {
+  -webkit-transform: scale(1.08);
+          transform: scale(1.08);
+}
+
+#services img {
+  height: 100px;
+}
+
+#services .project_name {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+#services .project_description {
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  color: #0e0404;
+  text-shadow: 1px 1px rgba(255, 255, 255, 0.274);
 }
 
 @media only screen and (max-width: 480px) {

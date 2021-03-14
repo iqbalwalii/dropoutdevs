@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&display=swap');
 
 
+$yellow  :rgba(255, 198, 9, 0.979);
 // General classes
 
 @keyframes fromLeft{
@@ -17,13 +20,87 @@
     transform:  rotate(360deg);
   }
 }
+html,body{
+  scroll-behavior: smooth;
 
+}
 body{
   background-image: linear-gradient( 45deg,  rgba(255,202,88,1) 0%, rgba(139,73,255,1) 100.2% );
   font-family: 'Bangers', cursive;
   position: relative;
   
   }
+  section
+  {
+    text-align: center;
+  & .btn_more
+  {
+    background: $yellow;
+    padding: 1rem 2.5rem ;
+    font-size: 1.5rem;
+    border-radius: 10px;
+  }
+  }
+  
+  .headings
+  {
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 3rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .cards
+  { 
+    padding: 3rem;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    & .card
+  {
+    border-radius: 20px;
+    padding: 1rem;
+    text-align: center;
+    width: 23vw;
+    height: 70vh;
+    background: rgba(255, 255, 255, 0.205);
+    & img {
+      filter: brightness(75%);
+      border-radius: 15px;
+      width: 100%;
+    }
+    & .project_name
+    {
+      font-size: 2rem;
+      margin-bottom: .8rem;
+      font-family: Acme, sans-serif;
+    }
+    & .project_description
+    {
+      margin-top: .5rem;
+      font-family: 'Caveat', cursive;
+      font-size: 1.6rem;
+    }
+    & a
+    {
+      background: $yellow;
+      padding: .6rem 1.3rem;
+      border-radius: 10px;
+      backdrop-filter: blur(30px);
+    }
+    & .buttons
+    {
+      display: none;
+      
+    }
+    &:hover .buttons
+    {
+      display: flex;
+      justify-content: space-around;
+
+    }
+  }
+}
 
   .navbar__menu{
     position: fixed;
@@ -76,17 +153,16 @@ header
   & .hero__heading
     {
       width: 40vw;
-      font-size: 1.8rem;
+      font-size: 2.8rem;
       font-family: 'Acme', sans-serif;
       color: #0f0f0fe1;
     }
 }
 
 
+
 .btn-grad {
-  background-image: linear-gradient(to right,  #fed231  51%, #bdb000  100%)
-}
-.btn-grad {
+  background-image: linear-gradient(to right,  #fed231  51%, #bdb000  100%);
    margin: 10px;
    padding: 8px 15px;
    text-align: center;
@@ -98,12 +174,12 @@ header
   //  box-shadow: 0 0 20px #eee;
    border-radius: 10px;
    display: block;
+   font-size: 1.5rem;
 
  }
 
  .btn-grad:hover {
    background-position: right center; /* change the direction of the change here */
-   color: rgb(53, 50, 50);
    text-decoration: none;
  }
 .navbar
@@ -136,6 +212,40 @@ header
       width: 120%;
     } 
 
+  }
+}
+//services
+#services
+{
+  & .card
+  {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 16vw;
+    height: initial;
+    margin-bottom: 1.5rem;
+    transition: all .3s linear;
+    &:hover{
+      transform: scale(1.08);
+    }
+  }
+
+ & img{
+    height: 100px;
+  }
+  & .project_name
+  {
+    font-size: 1.4rem;
+    margin: 0;
+  }
+  & .project_description
+  {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    // filter:drop-shadow(16px 16px 10px rgb(255, 230, 5));
+    color: rgb(14, 4, 4);
+    text-shadow: 1px 1px rgba(255, 255, 255, 0.274);
   }
 }
 
