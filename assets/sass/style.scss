@@ -24,6 +24,12 @@ html,body{
   scroll-behavior: smooth;
 
 }
+*, *::after,*::before{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+}
 body{
   background-image: linear-gradient( 45deg,  rgba(255,202,88,1) 0%, rgba(139,73,255,1) 100.2% );
   font-family: 'Bangers', cursive;
@@ -33,6 +39,7 @@ body{
   section
   {
     text-align: center;
+    margin-bottom: 10rem;
   & .btn_more
   {
     background: $yellow;
@@ -48,7 +55,7 @@ body{
     font-size: 3rem;
     text-align: center;
     text-transform: uppercase;
-  }
+  margin-bottom: 0;  }
   .cards
   { 
     padding: 3rem;
@@ -135,7 +142,9 @@ body{
   // width: 70vw;
   // box-shadow: 1px 1px 10px 6px rgba(255, 255, 255, 0.274); 
   border-radius: 20px;
-  background: adjust-hue($color: rgba(255, 255, 255, 0.096), $degrees: 60)
+  background: adjust-hue($color: rgba(255, 255, 255, 0.096), $degrees: 60);
+  width: 96vw;
+  margin: 2rem auto;
 
 }
 header
@@ -217,6 +226,15 @@ header
 //services
 #services
 {
+  & .cards
+  {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(12vw, 230px));
+    padding: 4rem;
+    grid-gap: 5vw;
+    justify-content: center;
+    // margin:auto;
+  }
   & .card
   {
     display: flex;
@@ -248,8 +266,128 @@ header
     text-shadow: 1px 1px rgba(255, 255, 255, 0.274);
   }
 }
+footer
+{
+  font-family: Acme, sans-serif;
+  width:100%;
+  margin-top: 3rem;
+  height: 50vh;
+  background-image:  url("../images/colorbomb.jpg");
 
+  background-size: cover;
+  position: relative;
+  & .footer_glass
+  {
+   backdrop-filter: blur(25px);
+   width: 100vw;
+   height: inherit;
+   right: 0;
+   top: 0;
+   position: absolute;
+ }
+  & li
+  {
+    list-style: none;
+    font-size: .9rem;
+    margin-bottom: .5rem;
+    font-weight: 100;
+  }
+  & .footer_container
+  {
+    display: flex;
+    background-color: rgba(253, 253, 253, 0.37);
+    justify-content: space-between;
+    position: absolute;
+    width: 80vw;
+    top: -2.5rem;
+    left: 10vw;
+    padding: 3rem 1rem;
+    border-top-right-radius: 80px;
+    border-bottom-left-radius: 80px;
+    & h3{
+      font-weight: 100;
+      color: #fefefe;
+      text-shadow: 1px 1px #000;
+      font-size: 1.4rem;
+     margin-bottom: 1rem; 
+    }
+    & .footer_logo{
+      width: 180px;
+      position: absolute;
+      top: 10;
+      left: -1%;
+      & h6{
+        font-style: italic;
+        font-size: 1rem;
+        width: 100px;
+        margin-left: .8rem;
+        margin-top: -10px;
+      }
+      & img{
+        width: 66%;
+      }
+    }
+    & .footer_services{
+      margin-left: 40vw;
+    }
+  }
+}
+.new{
+  display: flex;
+  justify-content: space-around;
+  height: 85vh;
+  & img
+  {
+    width: 35vw;
+    z-index: -1;
+    
+  }
+.contact_card
+{
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.200);
+  width: 35vw;
+  padding: 3rem;
+  border-radius: 20px;
+  
+  & h2
+  {
+    text-align: center;
+    margin-bottom: 1.6rem;
+    color: rgba(29, 27, 27, 0.759);
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
 
+  & form
+  {
+    display: flex;
+    flex-direction: column;
+    & input, textarea
+    {
+      height: 6vh;
+      margin-bottom: 1.4rem;
+      outline: none;
+      border: none;
+      border-radius: 10px;
+      padding: 8px;
+      
+    }
+    & textarea
+    {height: 20vh;}
+    & input:last-child
+    { background:linear-gradient(to left, rgba(255, 202, 88, 0.726) 0%, rgba(140, 73, 255, 0.473) 100.2% );
+      width: 50%;
+      margin: auto;
+      outline: none;
+      color: rgb(26, 17, 17);
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+  }
+}}
 @media only screen and (max-width:480px){
   .hamburger {    display: block;}
   
