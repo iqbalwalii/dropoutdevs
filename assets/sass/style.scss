@@ -30,7 +30,12 @@ html,body{
   padding: 0;
 
 }
-body{
+.head{color: #f1ee0c;
+letter-spacing: 2px;
+text-shadow: 1px 1px black;
+font-family: bangers, sans-serif;
+text-align: center;
+}body{
   background-image: linear-gradient( 45deg,  rgba(255,202,88,1) 0%, rgba(139,73,255,1) 100.2% );
   font-family: 'Bangers', cursive;
   position: relative;
@@ -39,7 +44,7 @@ body{
   section
   {
     text-align: center;
-    margin-bottom: 10rem;
+    margin-bottom: 2rem;
   & .btn_more
   {
     background: $yellow;
@@ -51,11 +56,18 @@ body{
   
   .headings
   {
-    font-family: 'Nanum Myeongjo', serif;
     font-size: 3rem;
     text-align: center;
     text-transform: uppercase;
   margin-bottom: 0;  }
+  .top
+  {
+    position: fixed;
+    right: 4%;
+    bottom: 4%;
+    color: #f1ee0c;
+    font-size: 2.5rem;
+  }
   .cards
   { 
     padding: 3rem;
@@ -108,6 +120,7 @@ body{
     }
   }
 }
+
 
   .navbar__menu{
     position: fixed;
@@ -177,7 +190,7 @@ header
    text-align: center;
    width: 10vw;
    text-transform: uppercase;
-   transition: 0.5s;
+   transition: all 5s;
    background-size: 200% auto;
    color: rgb(48, 46, 46);            
   //  box-shadow: 0 0 20px #eee;
@@ -190,6 +203,7 @@ header
  .btn-grad:hover {
    background-position: right center; /* change the direction of the change here */
    text-decoration: none;
+   background-image: linear-gradient(#f1ee0c);
  }
 .navbar
 {
@@ -270,7 +284,7 @@ footer
 {
   font-family: Acme, sans-serif;
   width:100%;
-  margin-top: 3rem;
+  margin-top: 7rem;
   height: 50vh;
   background-image:  url("../images/colorbomb.jpg");
 
@@ -388,76 +402,217 @@ footer
     }
   }
 }}
-@media only screen and (max-width:480px){
-  .hamburger {    display: block;}
-  
-.hide{
-  display: block;
-}
-
-  nav{
-    position: fixed;
-    width: 95vw;
-  }
- .nav__links
- {
-   
-  display: none;
- }
- .container{
-   height: 100vh;
-  }
-  header
+.illustration
+{
+  padding: 2rem;
+  & .text
   {
-  height: 100vh;
-  display: grid;
-  justify-content: space-around;
-  align-items: center;
-  opacity: 1;
-  padding: 1rem;
+    & h1
+    {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      
+    }
+    & p
+    {
+      font-family: Acme;
+      // font-weight: 100;
+      line-height: 35px;
+    }
+  }
   & img
   {
-    width: 45vw;
+    width: 50vw;
+    // z-index: -2;
+    margin-top: 1.5rem;
 
   }
-  & > div
-    {
-      position: absolute;
-      top: 30%;
-      left: 50%;
-      z-index: 1;
-      transform: translate(-50%, -50%);
-      & .hero__heading
-      {
-        font-size: 1.3rem;
-        text-align: center;
-        width: 60vw;
+  display: flex;
+}
+
+// ABOUT PAGE
+
+main{
+  width: 75vw;
+  margin: auto;
+  & section.details{
+    margin-bottom: 5rem;
+    h1.head{
+      margin: 2rem;
+    }
+    p{
+      line-height: 25px;
+      font-size: 1.3rem;
+    }
+  }
+  & section.team{
+    margin-bottom: 5rem;
+   & h3{
+      margin: .5rem;
+      font-size: 1.2rem;
+      font-family: Acme, sans-serif;
+      text-transform: uppercase;
+      word-spacing:5px;
+    }
+    & h5{
+      font-size: 1rem;
+      font-family: Acme, sans-serif;
+    }
+    
+    & .card{
+      width: 20vw;
+      height: fit-content;
+      transition: all .3s ease-out;
+      backface-visibility: hidden;
+      &:hover{
+        background-color:  #fffb0350;
+        transform: scale(1.02);
+
+      }
+      &:hover li{
+        color:  #9033be;
+      }
+      & a#gmail{
+        background: rgba(255, 255, 255, 0.007) ;
+        padding: 0;
+        display: inline-block;
+        margin-top: .1rem;
+        font-family: Acme, sans-serif;
+        font-size: .9rem;
+        &:hover{
+          background: rgba(255, 255, 255, 0.007) ;
+
+        }
+       
+      }
+      & ul{
+        display: flex;
+        list-style: none;
+        justify-content: center;
+        margin: 1rem 0;
+        & li{
+          transition: all .3s ease-out;
+          font-size: 1.2rem;
+          margin-right: .5rem;
+          backface-visibility: hidden;
+          cursor: pointer;
+          &:hover{
+            transform: scale(1.2);
+          }
+        }
       }
     }
-  & .btn-grad {
-    width: 15vw;
-    margin: auto;
-  }
-
-}
-
-.lolo{
-  margin-top: 5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  & > a
-  {
-    margin-bottom: 2rem;
-    &:nth-of-type(2){
-      margin-left: 8rem
-    }
-    &:nth-of-type(3){
-      margin-left: 16rem
-    }
-  }
   
+  }
 }
 
+@media only screen and (max-width:480px)
+{
+    .hamburger {    display: block;}
+    
+  .hide{
+    display: block;
+  }
 
+    nav{
+      position: fixed;
+      width: 95vw;
+    }
+  .nav__links
+  {
+    
+    display: none;
+  }
+  .container{
+    height: 100vh;
+    }
+    header
+    {
+    height: 90vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    opacity: 1;
+    padding: 1rem;
+    & img
+    {
+      width: 45vw;
+
+    }
+    & > div
+      {
+        position: absolute;
+        top: 9%;
+        left: 50%;
+        z-index: 1;
+        transform: translate(-50%, -50%);
+        & .hero__heading
+        {
+          font-size: 1.3rem;
+          text-align: center;
+          width: 60vw;
+          text-transform: uppercase;
+        }
+        & .btn-grad {
+          width: 40vw;
+          margin: auto;
+        }
+      }
+
+
+  }
+
+  .lolo{
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & > a
+    {
+      margin-bottom: 2rem;
+      &:nth-of-type(2){
+        margin-left: 8rem
+      }
+      &:nth-of-type(3){
+        margin-left: 16rem
+      }
+    }
+    
+  }
+  .illustration
+  {
+    position: relative;
+    flex-direction: column;
+    & .btn-grad
+    {
+      margin: auto;
+      width: 30vw;
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      padding: 1rem;
+    }
+    & img
+    {
+      position: absolute;
+      top: 20%;
+      z-index: -1;
+      opacity: .5;
+      width: 90vw;
+    }
+  }
+
+   #services
+    {
+      & .cards
+      {
+        grid-template-columns: 1fr 1fr;
+        & .card
+        {
+          width: 40vw;
+          height: 85vh;
+          margin: auto;
+        }
+      }
+    }
+  
 }

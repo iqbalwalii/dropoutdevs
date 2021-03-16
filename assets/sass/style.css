@@ -48,6 +48,14 @@ html, body {
   padding: 0;
 }
 
+.head {
+  color: #f1ee0c;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px black;
+  font-family: bangers, sans-serif;
+  text-align: center;
+}
+
 body {
   background-image: linear-gradient(45deg, #ffca58 0%, #8b49ff 100.2%);
   font-family: 'Bangers', cursive;
@@ -56,7 +64,7 @@ body {
 
 section {
   text-align: center;
-  margin-bottom: 10rem;
+  margin-bottom: 2rem;
 }
 
 section .btn_more {
@@ -67,11 +75,18 @@ section .btn_more {
 }
 
 .headings {
-  font-family: 'Nanum Myeongjo', serif;
   font-size: 3rem;
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 0;
+}
+
+.top {
+  position: fixed;
+  right: 4%;
+  bottom: 4%;
+  color: #f1ee0c;
+  font-size: 2.5rem;
 }
 
 .cards {
@@ -206,8 +221,8 @@ header .hero__heading {
   text-align: center;
   width: 10vw;
   text-transform: uppercase;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: all 5s;
+  transition: all 5s;
   background-size: 200% auto;
   color: #302e2e;
   border-radius: 10px;
@@ -219,6 +234,8 @@ header .hero__heading {
   background-position: right center;
   /* change the direction of the change here */
   text-decoration: none;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f1ee0c));
+  background-image: linear-gradient(#f1ee0c);
 }
 
 .navbar {
@@ -316,7 +333,7 @@ header .hero__heading {
 footer {
   font-family: Acme, sans-serif;
   width: 100%;
-  margin-top: 3rem;
+  margin-top: 7rem;
   height: 50vh;
   background-image: url("../images/colorbomb.jpg");
   background-size: cover;
@@ -459,6 +476,123 @@ footer .footer_container .footer_services {
   font-size: 1.1rem;
 }
 
+.illustration {
+  padding: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.illustration .text h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.illustration .text p {
+  font-family: Acme;
+  line-height: 35px;
+}
+
+.illustration img {
+  width: 50vw;
+  margin-top: 1.5rem;
+}
+
+main {
+  width: 75vw;
+  margin: auto;
+}
+
+main section.details {
+  margin-bottom: 5rem;
+}
+
+main section.details h1.head {
+  margin: 2rem;
+}
+
+main section.details p {
+  line-height: 25px;
+  font-size: 1.3rem;
+}
+
+main section.team {
+  margin-bottom: 5rem;
+}
+
+main section.team h3 {
+  margin: .5rem;
+  font-size: 1.2rem;
+  font-family: Acme, sans-serif;
+  text-transform: uppercase;
+  word-spacing: 5px;
+}
+
+main section.team h5 {
+  font-size: 1rem;
+  font-family: Acme, sans-serif;
+}
+
+main section.team .card {
+  width: 20vw;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  -webkit-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+main section.team .card:hover {
+  background-color: #fffb0350;
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
+main section.team .card:hover li {
+  color: #9033be;
+}
+
+main section.team .card a#gmail {
+  background: rgba(255, 255, 255, 0.007);
+  padding: 0;
+  display: inline-block;
+  margin-top: .1rem;
+  font-family: Acme, sans-serif;
+  font-size: .9rem;
+}
+
+main section.team .card a#gmail:hover {
+  background: rgba(255, 255, 255, 0.007);
+}
+
+main section.team .card ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 1rem 0;
+}
+
+main section.team .card ul li {
+  -webkit-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+  font-size: 1.2rem;
+  margin-right: .5rem;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  cursor: pointer;
+}
+
+main section.team .card ul li:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
 @media only screen and (max-width: 480px) {
   .hamburger {
     display: block;
@@ -477,9 +611,10 @@ footer .footer_container .footer_services {
     height: 100vh;
   }
   header {
-    height: 100vh;
-    display: -ms-grid;
-    display: grid;
+    height: 90vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -ms-flex-pack: distribute;
         justify-content: space-around;
     -webkit-box-align: center;
@@ -493,7 +628,7 @@ footer .footer_container .footer_services {
   }
   header > div {
     position: absolute;
-    top: 30%;
+    top: 9%;
     left: 50%;
     z-index: 1;
     -webkit-transform: translate(-50%, -50%);
@@ -503,9 +638,10 @@ footer .footer_container .footer_services {
     font-size: 1.3rem;
     text-align: center;
     width: 60vw;
+    text-transform: uppercase;
   }
-  header .btn-grad {
-    width: 15vw;
+  header > div .btn-grad {
+    width: 40vw;
     margin: auto;
   }
   .lolo {
@@ -529,6 +665,36 @@ footer .footer_container .footer_services {
   }
   .lolo > a:nth-of-type(3) {
     margin-left: 16rem;
+  }
+  .illustration {
+    position: relative;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .illustration .btn-grad {
+    margin: auto;
+    width: 30vw;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    padding: 1rem;
+  }
+  .illustration img {
+    position: absolute;
+    top: 20%;
+    z-index: -1;
+    opacity: .5;
+    width: 90vw;
+  }
+  #services .cards {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+  #services .cards .card {
+    width: 40vw;
+    height: 85vh;
+    margin: auto;
   }
 }
 /*# sourceMappingURL=style.css.map */
