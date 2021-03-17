@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
 
 $yellow  :rgba(255, 198, 9, 0.979);
 // General classes
@@ -59,7 +59,8 @@ text-align: center;
     font-size: 3rem;
     text-align: center;
     text-transform: uppercase;
-  margin-bottom: 0;  }
+    margin-bottom: 0;  
+  }
   .top
   {
     position: fixed;
@@ -68,58 +69,67 @@ text-align: center;
     color: #f1ee0c;
     font-size: 2.5rem;
   }
-  .cards
-  { 
-    padding: 3rem;
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-
-    & .card
+  #projects
   {
-    border-radius: 20px;
-    padding: 1rem;
-    text-align: center;
-    width: 23vw;
-    height: 70vh;
-    background: rgba(255, 255, 255, 0.205);
-    & img {
-      filter: brightness(75%);
-      border-radius: 15px;
-      width: 100%;
-    }
-    & .project_name
-    {
-      font-size: 2rem;
-      margin-bottom: .8rem;
-      font-family: Acme, sans-serif;
-    }
-    & .project_description
-    {
-      margin-top: .5rem;
-      font-family: 'Caveat', cursive;
-      font-size: 1.6rem;
-    }
-    & a
-    {
-      background: $yellow;
-      padding: .6rem 1.3rem;
-      border-radius: 10px;
-      backdrop-filter: blur(30px);
-    }
-    & .buttons
-    {
-      display: none;
-      
-    }
-    &:hover .buttons
-    {
+    & .cards
+    { 
+      padding: 3rem;
       display: flex;
-      justify-content: space-around;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
 
+      & .card
+      {
+        border-radius: 20px;
+        padding: 1rem;
+        text-align: center;
+        width: 23vw;
+        height: 70vh;
+        background: rgba(255, 255, 255, 0.205);
+        
+        & img 
+        {
+          filter: brightness(75%);
+          border-radius: 15px;
+          width: 100%;
+        }
+      
+        & .project_name
+        {
+          font-size: 2rem;
+          margin-bottom: .8rem;
+          font-family: Acme, sans-serif;
+        }
+
+        & .project_description
+        {
+          margin-top: .5rem;
+          font-family: 'Caveat', cursive;
+          font-size: 1.6rem;
+        }
+      
+        & a
+        {
+          background: $yellow;
+          padding: .6rem 1.3rem;
+          border-radius: 10px;
+          backdrop-filter: blur(30px);
+        }
+        & .buttons
+        {
+          display: none;
+          
+        }
+        &:hover .buttons
+        {
+          display: flex;
+          justify-content: space-around;
+
+        }
+      }  
     }
   }
-}
+
 
 
   .navbar__menu{
@@ -244,22 +254,33 @@ header
   {
     display: grid;
     grid-template-columns: repeat(4, minmax(12vw, 230px));
-    padding: 4rem;
+    padding: 2rem;
     grid-gap: 5vw;
     justify-content: center;
     // margin:auto;
-  }
-  & .card
-  {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 16vw;
-    height: initial;
-    margin-bottom: 1.5rem;
-    transition: all .3s linear;
-    &:hover{
-      transform: scale(1.08);
+    & .card
+    {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: initial;
+      margin-bottom: 1.5rem;
+      border-radius: 20px;
+      padding: 1rem;
+      text-align: center;
+      width: 20vw;
+      height: 70vh;
+      background: rgba(255, 255, 255, 0.205);
+      transition: all .3s linear;
+      &:hover{
+        transform: scale(1.08);
+      }
+      & .project_name
+        {
+          font-size: 2rem;
+          margin-bottom: .8rem;
+          font-family: Acme, sans-serif;
+        }
     }
   }
 
@@ -280,6 +301,7 @@ header
     text-shadow: 1px 1px rgba(255, 255, 255, 0.274);
   }
 }
+
 footer
 {
   font-family: Acme, sans-serif;
@@ -405,6 +427,10 @@ footer
 .illustration
 {
   padding: 2rem;
+  & .btn-grad
+  {
+    margin: auto;
+  }
   & .text
   {
     & h1
@@ -508,14 +534,16 @@ main{
 
 @media only screen and (max-width:480px)
 {
-    .hamburger {    display: block;}
+    .hamburger {    display: block;
+    position: fixed;
+  right: 20px;}
     
   .hide{
     display: block;
   }
 
     nav{
-      position: fixed;
+      // position: fixed;
       width: 95vw;
     }
   .nav__links
@@ -537,12 +565,13 @@ main{
     & img
     {
       width: 45vw;
+      margin-top: -53%;
 
     }
     & > div
       {
         position: absolute;
-        top: 9%;
+        top: 7%;
         left: 50%;
         z-index: 1;
         transform: translate(-50%, -50%);
@@ -609,10 +638,55 @@ main{
         & .card
         {
           width: 40vw;
-          height: 85vh;
-          margin: auto;
+          height: 75vh;
+          margin: 1rem auto;
+          & .project_name
+          {
+            font-size: 1.3rem;
+          }
+          & .project_description
+          {
+            font-size: 1rem;
+            font-family: 'Shadows Into Light', cursive;
+            font-weight: bolder;
+          }
+
         }
       }
     }
+    #projects
+    {
+      & .cards
+      {
+        flex-direction: column;
+        & .card
+        {
+          width: 60vw;
+          height: 60vh;
+          margin:auto;
+          margin-bottom: 1rem;
+          padding: 1rem;
+        }
+      }
+    }
+  footer
+  {
+    height: 60vh;
+    & .footer_container
+    {
+      top: -2.5rem;
+      left: 5vw;
+      width: 90vw;
+      & h3
+      {
+        font-size: 1.3rem;
+      }
+    }
   
+  }
+  footer .footer_container .footer_services {
+    margin-left: 30vw;
+    margin-right: 2rem;
+}
+
 }

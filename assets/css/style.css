@@ -54,38 +54,38 @@ section {
   color: #f1ee0c;
   font-size: 2.5rem; }
 
-.cards {
+#projects .cards {
   padding: 3rem;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap; }
-  .cards .card {
+  #projects .cards .card {
     border-radius: 20px;
     padding: 1rem;
     text-align: center;
     width: 23vw;
     height: 70vh;
     background: rgba(255, 255, 255, 0.205); }
-    .cards .card img {
+    #projects .cards .card img {
       filter: brightness(75%);
       border-radius: 15px;
       width: 100%; }
-    .cards .card .project_name {
+    #projects .cards .card .project_name {
       font-size: 2rem;
       margin-bottom: .8rem;
       font-family: Acme, sans-serif; }
-    .cards .card .project_description {
+    #projects .cards .card .project_description {
       margin-top: .5rem;
       font-family: 'Caveat', cursive;
       font-size: 1.6rem; }
-    .cards .card a {
+    #projects .cards .card a {
       background: rgba(255, 198, 9, 0.979);
       padding: .6rem 1.3rem;
       border-radius: 10px;
       backdrop-filter: blur(30px); }
-    .cards .card .buttons {
+    #projects .cards .card .buttons {
       display: none; }
-    .cards .card:hover .buttons {
+    #projects .cards .card:hover .buttons {
       display: flex;
       justify-content: space-around; }
 
@@ -184,19 +184,28 @@ header {
 #services .cards {
   display: grid;
   grid-template-columns: repeat(4, minmax(12vw, 230px));
-  padding: 4rem;
+  padding: 2rem;
   grid-gap: 5vw;
   justify-content: center; }
-#services .card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 16vw;
-  height: initial;
-  margin-bottom: 1.5rem;
-  transition: all .3s linear; }
-  #services .card:hover {
-    transform: scale(1.08); }
+  #services .cards .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: initial;
+    margin-bottom: 1.5rem;
+    border-radius: 20px;
+    padding: 1rem;
+    text-align: center;
+    width: 20vw;
+    height: 70vh;
+    background: rgba(255, 255, 255, 0.205);
+    transition: all .3s linear; }
+    #services .cards .card:hover {
+      transform: scale(1.08); }
+    #services .cards .card .project_name {
+      font-size: 2rem;
+      margin-bottom: .8rem;
+      font-family: Acme, sans-serif; }
 #services img {
   height: 100px; }
 #services .project_name {
@@ -306,6 +315,8 @@ footer {
 .illustration {
   padding: 2rem;
   display: flex; }
+  .illustration .btn-grad {
+    margin: auto; }
   .illustration .text h1 {
     font-size: 2rem;
     margin-bottom: 2rem; }
@@ -372,13 +383,14 @@ main {
 
 @media only screen and (max-width: 480px) {
   .hamburger {
-    display: block; }
+    display: block;
+    position: fixed;
+    right: 20px; }
 
   .hide {
     display: block; }
 
   nav {
-    position: fixed;
     width: 95vw; }
 
   .nav__links {
@@ -395,10 +407,11 @@ main {
     opacity: 1;
     padding: 1rem; }
     header img {
-      width: 45vw; }
+      width: 45vw;
+      margin-top: -53%; }
     header > div {
       position: absolute;
-      top: 9%;
+      top: 7%;
       left: 50%;
       z-index: 1;
       transform: translate(-50%, -50%); }
@@ -443,7 +456,29 @@ main {
     grid-template-columns: 1fr 1fr; }
     #services .cards .card {
       width: 40vw;
-      height: 85vh;
-      margin: auto; } }
+      height: 60vh;
+      margin: auto; }
+
+  #projects .cards {
+    flex-direction: column; }
+    #projects .cards .card {
+      width: 60vw;
+      height: 60vh;
+      margin: auto;
+      margin-bottom: 1rem;
+      padding: 1rem; }
+
+  footer {
+    height: 60vh; }
+    footer .footer_container {
+      top: -2.5rem;
+      left: 5vw;
+      width: 90vw; }
+      footer .footer_container h3 {
+        font-size: 1.3rem; }
+
+  footer .footer_container .footer_services {
+    margin-left: 30vw;
+    margin-right: 2rem; } }
 
 /*# sourceMappingURL=style.css.map */

@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
 @-webkit-keyframes fromLeft {
   0% {
     opacity: 0;
@@ -89,7 +90,7 @@ section .btn_more {
   font-size: 2.5rem;
 }
 
-.cards {
+#projects .cards {
   padding: 3rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -101,7 +102,7 @@ section .btn_more {
       flex-wrap: wrap;
 }
 
-.cards .card {
+#projects .cards .card {
   border-radius: 20px;
   padding: 1rem;
   text-align: center;
@@ -110,26 +111,26 @@ section .btn_more {
   background: rgba(255, 255, 255, 0.205);
 }
 
-.cards .card img {
+#projects .cards .card img {
   -webkit-filter: brightness(75%);
           filter: brightness(75%);
   border-radius: 15px;
   width: 100%;
 }
 
-.cards .card .project_name {
+#projects .cards .card .project_name {
   font-size: 2rem;
   margin-bottom: .8rem;
   font-family: Acme, sans-serif;
 }
 
-.cards .card .project_description {
+#projects .cards .card .project_description {
   margin-top: .5rem;
   font-family: 'Caveat', cursive;
   font-size: 1.6rem;
 }
 
-.cards .card a {
+#projects .cards .card a {
   background: rgba(255, 198, 9, 0.979);
   padding: .6rem 1.3rem;
   border-radius: 10px;
@@ -137,11 +138,11 @@ section .btn_more {
           backdrop-filter: blur(30px);
 }
 
-.cards .card .buttons {
+#projects .cards .card .buttons {
   display: none;
 }
 
-.cards .card:hover .buttons {
+#projects .cards .card:hover .buttons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -284,14 +285,14 @@ header .hero__heading {
   display: grid;
   -ms-grid-columns: (minmax(12vw, 230px))[4];
       grid-template-columns: repeat(4, minmax(12vw, 230px));
-  padding: 4rem;
+  padding: 2rem;
   grid-gap: 5vw;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 
-#services .card {
+#services .cards .card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -302,16 +303,27 @@ header .hero__heading {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 16vw;
   height: initial;
   margin-bottom: 1.5rem;
+  border-radius: 20px;
+  padding: 1rem;
+  text-align: center;
+  width: 20vw;
+  height: 70vh;
+  background: rgba(255, 255, 255, 0.205);
   -webkit-transition: all .3s linear;
   transition: all .3s linear;
 }
 
-#services .card:hover {
+#services .cards .card:hover {
   -webkit-transform: scale(1.08);
           transform: scale(1.08);
+}
+
+#services .cards .card .project_name {
+  font-size: 2rem;
+  margin-bottom: .8rem;
+  font-family: Acme, sans-serif;
 }
 
 #services img {
@@ -483,6 +495,10 @@ footer .footer_container .footer_services {
   display: flex;
 }
 
+.illustration .btn-grad {
+  margin: auto;
+}
+
 .illustration .text h1 {
   font-size: 2rem;
   margin-bottom: 2rem;
@@ -596,12 +612,13 @@ main section.team .card ul li:hover {
 @media only screen and (max-width: 480px) {
   .hamburger {
     display: block;
+    position: fixed;
+    right: 20px;
   }
   .hide {
     display: block;
   }
   nav {
-    position: fixed;
     width: 95vw;
   }
   .nav__links {
@@ -625,10 +642,11 @@ main section.team .card ul li:hover {
   }
   header img {
     width: 45vw;
+    margin-top: -53%;
   }
   header > div {
     position: absolute;
-    top: 9%;
+    top: 7%;
     left: 50%;
     z-index: 1;
     -webkit-transform: translate(-50%, -50%);
@@ -693,8 +711,44 @@ main section.team .card ul li:hover {
   }
   #services .cards .card {
     width: 40vw;
-    height: 85vh;
+    height: 75vh;
+    margin: 1rem auto;
+  }
+  #services .cards .card .project_name {
+    font-size: 1.3rem;
+  }
+  #services .cards .card .project_description {
+    font-size: 1rem;
+    font-family: 'Shadows Into Light', cursive;
+    font-weight: bolder;
+  }
+  #projects .cards {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #projects .cards .card {
+    width: 60vw;
+    height: 60vh;
     margin: auto;
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+  footer {
+    height: 60vh;
+  }
+  footer .footer_container {
+    top: -2.5rem;
+    left: 5vw;
+    width: 90vw;
+  }
+  footer .footer_container h3 {
+    font-size: 1.3rem;
+  }
+  footer .footer_container .footer_services {
+    margin-left: 30vw;
+    margin-right: 2rem;
   }
 }
 /*# sourceMappingURL=style.css.map */
