@@ -152,16 +152,18 @@ section .btn_more {
 
 .navbar__menu {
   position: fixed;
-  bottom: -40%;
+  bottom: -60%;
   z-index: 100;
   left: -40%;
   border-radius: 100%;
+  border-top-left-radius: 3%;
   width: 100vw;
   height: 80vh;
-  background: rgba(228, 228, 226, 0.308);
-  -webkit-animation: fromLeft 1s linear;
-          animation: fromLeft 1s linear;
+  background: rgba(243, 239, 2, 0.232);
+  -webkit-animation: fromLeft .3s linear;
+          animation: fromLeft .3s linear;
   display: none;
+  border: 1px solid rgba(0, 0, 0, 0.377);
 }
 
 a {
@@ -286,7 +288,7 @@ header .hero__heading {
   -ms-grid-columns: (minmax(12vw, 230px))[4];
       grid-template-columns: repeat(4, minmax(12vw, 230px));
   padding: 2rem;
-  grid-gap: 5vw;
+  grid-gap: 7vw;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -309,7 +311,6 @@ header .hero__heading {
   padding: 1rem;
   text-align: center;
   width: 20vw;
-  height: 70vh;
   background: rgba(255, 255, 255, 0.205);
   -webkit-transition: all .3s linear;
   transition: all .3s linear;
@@ -536,6 +537,21 @@ main section.team {
   margin-bottom: 5rem;
 }
 
+main section.team .cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 2rem;
+  margin-bottom: 20rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main section.team .cards .card img {
+  width: 100px;
+}
+
 main section.team h3 {
   margin: .5rem;
   font-size: 1.2rem;
@@ -610,6 +626,13 @@ main section.team .card ul li:hover {
 }
 
 @media only screen and (max-width: 480px) {
+  body {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ffca58), color-stop(#8b49ff), color-stop(#ffca58), to(#de58ff));
+    background-image: linear-gradient(to bottom, #ffca58 0%, #8b49ff, #ffca58, #de58ff);
+  }
+  .container {
+    background: rgba(236, 226, 226, 0.229);
+  }
   .hamburger {
     display: block;
     position: fixed;
@@ -617,6 +640,9 @@ main section.team .card ul li:hover {
   }
   .hide {
     display: block;
+  }
+  .hiding {
+    display: none;
   }
   nav {
     width: 95vw;
@@ -641,12 +667,12 @@ main section.team .card ul li:hover {
     padding: 1rem;
   }
   header img {
-    width: 45vw;
-    margin-top: -53%;
+    width: 75vw;
+    margin-top: -69%;
   }
   header > div {
     position: absolute;
-    top: 7%;
+    top: 8.5%;
     left: 50%;
     z-index: 1;
     -webkit-transform: translate(-50%, -50%);
@@ -663,7 +689,7 @@ main section.team .card ul li:hover {
     margin: auto;
   }
   .lolo {
-    margin-top: 5rem;
+    margin-top: 3rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -674,6 +700,13 @@ main section.team .card ul li:hover {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    position: relative;
+  }
+  .lolo .close {
+    position: absolute;
+    font-size: 2.5rem;
+    color: black;
+    top: 60%;
   }
   .lolo > a {
     margin-bottom: 2rem;
@@ -705,14 +738,19 @@ main section.team .card ul li:hover {
     opacity: .5;
     width: 90vw;
   }
+  #services .head {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+  }
   #services .cards {
-    -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    padding: 0;
   }
   #services .cards .card {
-    width: 40vw;
-    height: 75vh;
-    margin: 1rem auto;
+    width: 60vw;
+    height: 40vh;
+    margin: auto;
   }
   #services .cards .card .project_name {
     font-size: 1.3rem;
@@ -735,8 +773,17 @@ main section.team .card ul li:hover {
     margin-bottom: 1rem;
     padding: 1rem;
   }
+  #projects .cards .card .buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    margin-top: 1rem;
+    padding-top: 1rem;
+  }
   footer {
-    height: 60vh;
+    height: 50vh;
   }
   footer .footer_container {
     top: -2.5rem;
@@ -749,6 +796,22 @@ main section.team .card ul li:hover {
   footer .footer_container .footer_services {
     margin-left: 30vw;
     margin-right: 2rem;
+  }
+  .new {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: relative;
+  }
+  .new .contact_card {
+    width: 80vw;
+    margin: auto;
+  }
+  .new img {
+    position: absolute;
+    top: 5%;
+    width: 100%;
   }
 }
 /*# sourceMappingURL=style.css.map */
