@@ -3,6 +3,31 @@
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
+@-webkit-keyframes flip {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+@keyframes flip {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
 @-webkit-keyframes fromLeft {
   0% {
     opacity: 0;
@@ -20,6 +45,7 @@
             transform: rotate(360deg);
   }
 }
+
 @keyframes fromLeft {
   0% {
     opacity: 0;
@@ -100,6 +126,8 @@ section .btn_more {
           justify-content: space-evenly;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-perspective: 100  0px;
+          perspective: 100  0px;
 }
 
 #projects .cards .card {
@@ -109,6 +137,39 @@ section .btn_more {
   width: 23vw;
   height: 70vh;
   background: rgba(255, 255, 255, 0.205);
+  -webkit-transition: all .3s linear;
+  transition: all .3s linear;
+}
+
+#projects .cards .card .back {
+  visibility: hidden;
+}
+
+#projects .cards .card .back p {
+  font-family: caveat, cursive;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  -webkit-backface-visibility: visible;
+          backface-visibility: visible;
+}
+
+#projects .cards .card:hover {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  background: #c98ea673;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#projects .cards .card:hover .front {
+  display: none;
+}
+
+#projects .cards .card:hover .back {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  -webkit-animation: flip .3s linear;
+          animation: flip .3s linear;
+  visibility: visible;
 }
 
 #projects .cards .card img {
