@@ -101,6 +101,10 @@ section .btn_more {
   border-radius: 10px;
 }
 
+ul {
+  list-style: none;
+}
+
 .headings {
   font-size: 3rem;
   text-align: center;
@@ -151,6 +155,7 @@ section .btn_more {
   margin-bottom: 2rem;
   -webkit-backface-visibility: visible;
           backface-visibility: visible;
+  line-height: 25px;
 }
 
 #projects .cards .card:hover {
@@ -177,6 +182,8 @@ section .btn_more {
           filter: brightness(75%);
   border-radius: 15px;
   width: 100%;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
 }
 
 #projects .cards .card .project_name {
@@ -329,7 +336,7 @@ header .hero__heading {
   content: "";
   display: inline-block;
   width: 0%;
-  height: 1px;
+  height: 2px;
   background: -webkit-gradient(linear, left top, right top, from(#652cce), to(#e6f703));
   background: linear-gradient(to right, #652cce, #e6f703);
   position: absolute;
@@ -457,7 +464,7 @@ footer .footer_container h3 {
 }
 
 footer .footer_container .footer_logo {
-  width: 180px;
+  width: 100px;
   position: absolute;
   top: 10;
   left: -1%;
@@ -465,14 +472,15 @@ footer .footer_container .footer_logo {
 
 footer .footer_container .footer_logo h6 {
   font-style: italic;
-  font-size: 1rem;
+  font-size: .9rem;
   width: 100px;
+  font-weight: lighter;
   margin-left: .8rem;
   margin-top: -10px;
 }
 
 footer .footer_container .footer_logo img {
-  width: 66%;
+  width: 46%;
 }
 
 footer .footer_container .footer_services {
@@ -603,14 +611,25 @@ main section.team .cards {
   display: -ms-flexbox;
   display: flex;
   margin-top: 2rem;
-  margin-bottom: 20rem;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 
+main section.team .cards .card {
+  border-radius: 20px;
+  padding: 1rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.205);
+  -webkit-transition: all .3s linear;
+  transition: all .3s linear;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+}
+
 main section.team .cards .card img {
-  width: 100px;
+  width: 250px;
+  border-radius: 20px;
 }
 
 main section.team h3 {
@@ -686,6 +705,76 @@ main section.team .card ul li:hover {
           transform: scale(1.2);
 }
 
+section.project_details {
+  padding: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+}
+
+section.project_details aside {
+  width: 25vw;
+  text-align: start;
+  padding: 1rem;
+  border-radius: 10px;
+  height: 60vh;
+  background-color: rgba(255, 255, 255, 0.233);
+}
+
+section.project_details aside h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  text-align: start;
+}
+
+section.project_details aside ul li::before {
+  content: "\25B6";
+  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: #f1ee0c;
+  /* Change the color */
+  font-weight: bold;
+  /* If you want it to be bold */
+  display: inline-block;
+  /* Needed to add space between the bullet and the text */
+  width: 1em;
+  /* Also needed for space (tweak if needed) */
+  margin-left: -1em;
+  /* Also needed for space (tweak if needed) */
+}
+
+section.project_details aside ul > * {
+  margin-bottom: .8rem;
+  margin-left: 1rem;
+}
+
+section.project_details div.project_container {
+  background-color: rgba(255, 255, 255, 0.233);
+  width: 60vw;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+section.project_details div.project_container img {
+  width: 55vw;
+  height: 70vh;
+}
+
+section.project_details div.project_container .project_heading {
+  margin-top: 3rem;
+}
+
+section.project_details div.project_container .project_description {
+  font-family: Acme,sans-serif;
+  padding: 2rem;
+  text-align: start;
+  letter-spacing: 1.5px;
+  word-spacing: 3px;
+}
+
 @media only screen and (max-width: 480px) {
   body {
     background-image: -webkit-gradient(linear, left top, left bottom, from(#ffca58), color-stop(#8b49ff), color-stop(#ffca58), to(#de58ff));
@@ -708,11 +797,11 @@ main section.team .card ul li:hover {
   nav {
     width: 95vw;
   }
+  nav .logo img {
+    width: 50px;
+  }
   .nav__links {
     display: none;
-  }
-  .container {
-    height: 100vh;
   }
   header {
     height: 90vh;
@@ -730,6 +819,9 @@ main section.team .card ul li:hover {
   header img {
     width: 75vw;
     margin-top: -69%;
+  }
+  header div#about_container {
+    height: initial;
   }
   header > div {
     position: absolute;
@@ -810,7 +902,6 @@ main section.team .card ul li:hover {
   }
   #services .cards .card {
     width: 60vw;
-    height: 40vh;
     margin: auto;
   }
   #services .cards .card .project_name {
@@ -834,7 +925,10 @@ main section.team .card ul li:hover {
     margin-bottom: 1rem;
     padding: 1rem;
   }
-  #projects .cards .card .buttons {
+  #projects .cards .card .back p {
+    margin: 0 0;
+  }
+  #projects .cards .card .back .buttons {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -873,6 +967,78 @@ main section.team .card ul li:hover {
     position: absolute;
     top: 5%;
     width: 100%;
+  }
+  main h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  main section.team {
+    margin-bottom: 5rem;
+  }
+  main section.team .cards {
+    margin: auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  main section.team .cards .card {
+    margin-right: 0;
+    width: 80%;
+  }
+  main section.team .cards .card img {
+    width: 100%;
+  }
+  section.project_details {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  section.project_details div.project_container {
+    width: 100%;
+  }
+  section.project_details div.project_container img {
+    width: 100%;
+    height: 30%;
+  }
+  section.project_details div.project_container .project_description {
+    line-height: 20px;
+    text-align: center;
+  }
+  section.project_details aside {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+    width: 100%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    margin-bottom: 2rem;
+  }
+  section.project_details aside a {
+    margin-left: 1rem;
+    font-size: 1rem;
+    font-family: Acme, sans-serif;
+  }
+  section.project_details aside .head {
+    text-align: center;
+  }
+  section.project_details aside ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  section.project_details aside ul li {
+    margin-right: .5rem;
   }
 }
 /*# sourceMappingURL=style.css.map */
