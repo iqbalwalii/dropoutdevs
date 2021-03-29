@@ -2,20 +2,32 @@
 @import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
+@keyframes flip {
+  0% {
+    opacity: 0; }
+  90% {
+    opacity: 0; }
+  100% {
+    opacity: 1;
+    visibility: visible; } }
 @keyframes fromLeft {
   0% {
     opacity: 0;
-    transform: rotate(240deg); }
+    transform: translateX(-40vw); }
   50% {
     opacity: 0.5;
-    transform: rotate(300deg); }
+    transform: translateX(-40vw); }
   100% {
     opacity: 1;
-    transform: rotate(360deg); } }
-html, body {
+    transform: translateX(0); } }
+html,
+body {
   scroll-behavior: smooth; }
 
-*, *::after, *::before {
+*,
+*::after,
+*::before {
   box-sizing: border-box;
   margin: 0;
   padding: 0; }
@@ -39,7 +51,12 @@ section {
     background: rgba(255, 198, 9, 0.979);
     padding: 1rem 2.5rem;
     font-size: 1.5rem;
-    border-radius: 10px; }
+    border-radius: 10px;
+    margin-top: 2rem;
+    display: inline-block; }
+
+ul {
+  list-style: none; }
 
 .headings {
   font-size: 3rem;
@@ -54,52 +71,19 @@ section {
   color: #f1ee0c;
   font-size: 2.5rem; }
 
-#projects .cards {
-  padding: 3rem;
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap; }
-  #projects .cards .card {
-    border-radius: 20px;
-    padding: 1rem;
-    text-align: center;
-    width: 23vw;
-    height: 70vh;
-    background: rgba(255, 255, 255, 0.205); }
-    #projects .cards .card img {
-      filter: brightness(75%);
-      border-radius: 15px;
-      width: 100%; }
-    #projects .cards .card .project_name {
-      font-size: 2rem;
-      margin-bottom: .8rem;
-      font-family: Acme, sans-serif; }
-    #projects .cards .card .project_description {
-      margin-top: .5rem;
-      font-family: 'Caveat', cursive;
-      font-size: 1.6rem; }
-    #projects .cards .card a {
-      background: rgba(255, 198, 9, 0.979);
-      padding: .6rem 1.3rem;
-      border-radius: 10px;
-      backdrop-filter: blur(30px); }
-    #projects .cards .card .buttons {
-      display: none; }
-    #projects .cards .card:hover .buttons {
-      display: flex;
-      justify-content: space-around; }
-
 .navbar__menu {
-  position: fixed;
-  bottom: -40%;
   z-index: 100;
-  left: -40%;
-  border-radius: 100%;
-  width: 100vw;
-  height: 80vh;
-  background: rgba(228, 228, 226, 0.308);
-  animation: fromLeft 1s linear;
-  display: none; }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40vw;
+  border: 1px solid transparent;
+  outline: none;
+  height: 100vh;
+  background: linear-gradient(to bottom, rgba(245, 216, 88, 0.63), rgba(219, 62, 240, 0.616));
+  animation: fromLeft 0.3s linear;
+  display: none;
+  border: 1px solid rgba(0, 0, 0, 0.377); }
 
 a {
   text-decoration: none;
@@ -120,7 +104,8 @@ a {
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.096);
   width: 96vw;
-  margin: 2rem auto; }
+  margin: 2rem auto;
+  padding-bottom: 3rem; }
 
 header {
   display: flex;
@@ -143,7 +128,7 @@ header {
   text-align: center;
   width: 10vw;
   text-transform: uppercase;
-  transition: all 5s;
+  transition: all 0.5s;
   background-size: 200% auto;
   color: #302e2e;
   border-radius: 10px;
@@ -165,19 +150,19 @@ header {
     margin-right: 1.6rem;
     font-size: 1.4rem;
     color: #292323;
-    transition: all .3s linear;
+    transition: all 0.3s linear;
     position: relative;
-    padding-bottom: .1rem; }
+    padding-bottom: 0.1rem; }
     .navbar .nav__links > a::after {
-      content: "";
+      content: '';
       display: inline-block;
       width: 0%;
-      height: 1px;
+      height: 2px;
       background: linear-gradient(to right, #652cce, #e6f703);
       position: absolute;
       bottom: 0;
       left: -10%;
-      transition: all .3s linear; }
+      transition: all 0.3s linear; }
     .navbar .nav__links > a:hover::after {
       width: 120%; }
 
@@ -185,7 +170,7 @@ header {
   display: grid;
   grid-template-columns: repeat(4, minmax(12vw, 230px));
   padding: 2rem;
-  grid-gap: 5vw;
+  grid-gap: 7vw;
   justify-content: center; }
   #services .cards .card {
     display: flex;
@@ -197,14 +182,13 @@ header {
     padding: 1rem;
     text-align: center;
     width: 20vw;
-    height: 70vh;
     background: rgba(255, 255, 255, 0.205);
-    transition: all .3s linear; }
+    transition: all 0.3s linear; }
     #services .cards .card:hover {
       transform: scale(1.08); }
     #services .cards .card .project_name {
       font-size: 2rem;
-      margin-bottom: .8rem;
+      margin-bottom: 0.8rem;
       font-family: Acme, sans-serif; }
 #services img {
   height: 100px; }
@@ -234,8 +218,8 @@ footer {
     position: absolute; }
   footer li {
     list-style: none;
-    font-size: .9rem;
-    margin-bottom: .5rem;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
     font-weight: 100; }
   footer .footer_container {
     display: flex;
@@ -255,18 +239,19 @@ footer {
       font-size: 1.4rem;
       margin-bottom: 1rem; }
     footer .footer_container .footer_logo {
-      width: 180px;
+      width: 100px;
       position: absolute;
       top: 10;
       left: -1%; }
       footer .footer_container .footer_logo h6 {
         font-style: italic;
-        font-size: 1rem;
+        font-size: 0.9rem;
         width: 100px;
-        margin-left: .8rem;
+        font-weight: lighter;
+        margin-left: 0.8rem;
         margin-top: -10px; }
       footer .footer_container .footer_logo img {
-        width: 66%; }
+        width: 46%; }
     footer .footer_container .footer_services {
       margin-left: 40vw; }
 
@@ -293,13 +278,22 @@ footer {
     .new .contact_card form {
       display: flex;
       flex-direction: column; }
-      .new .contact_card form input, .new .contact_card form textarea {
+      .new .contact_card form input,
+      .new .contact_card form textarea {
         height: 6vh;
         margin-bottom: 1.4rem;
         outline: none;
         border: none;
         border-radius: 10px;
         padding: 8px; }
+      .new .contact_card form button.submit {
+        font-size: 0.9rem;
+        outline: none;
+        padding: 0.8rem 3rem;
+        border: none;
+        width: fit-content;
+        cursor: pointer;
+        font-weight: bolder; }
       .new .contact_card form textarea {
         height: 20vh; }
       .new .contact_card form input:last-child {
@@ -339,8 +333,23 @@ main {
       font-size: 1.3rem; }
   main section.team {
     margin-bottom: 5rem; }
+    main section.team .cards {
+      display: flex;
+      margin-top: 2rem;
+      justify-content: center; }
+      main section.team .cards .card {
+        border-radius: 20px;
+        padding: 1rem;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.205);
+        transition: all 0.3s linear;
+        margin-right: 2rem;
+        margin-bottom: 2rem; }
+        main section.team .cards .card img {
+          width: 250px;
+          border-radius: 20px; }
     main section.team h3 {
-      margin: .5rem;
+      margin: 0.5rem;
       font-size: 1.2rem;
       font-family: Acme, sans-serif;
       text-transform: uppercase;
@@ -351,20 +360,18 @@ main {
     main section.team .card {
       width: 20vw;
       height: fit-content;
-      transition: all .3s ease-out;
+      transition: all 0.3s ease-out;
       backface-visibility: hidden; }
       main section.team .card:hover {
         background-color: #fffb0350;
         transform: scale(1.02); }
-      main section.team .card:hover li {
-        color: #9033be; }
       main section.team .card a#gmail {
         background: rgba(255, 255, 255, 0.007);
         padding: 0;
         display: inline-block;
-        margin-top: .1rem;
+        margin-top: 0.1rem;
         font-family: Acme, sans-serif;
-        font-size: .9rem; }
+        font-size: 0.9rem; }
         main section.team .card a#gmail:hover {
           background: rgba(255, 255, 255, 0.007); }
       main section.team .card ul {
@@ -373,15 +380,203 @@ main {
         justify-content: center;
         margin: 1rem 0; }
         main section.team .card ul li {
-          transition: all .3s ease-out;
+          transition: all 0.3s ease-out;
           font-size: 1.2rem;
-          margin-right: .5rem;
+          margin-right: 0.5rem;
           backface-visibility: hidden;
           cursor: pointer; }
           main section.team .card ul li:hover {
             transform: scale(1.2); }
 
+section.project_details {
+  padding: 3rem;
+  display: flex;
+  justify-content: space-between;
+  position: relative; }
+  section.project_details aside {
+    width: 25vw;
+    text-align: start;
+    padding: 1rem;
+    border-radius: 10px;
+    height: 60vh;
+    background-color: rgba(255, 255, 255, 0.233); }
+    section.project_details aside h2 {
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+      text-align: start; }
+    section.project_details aside ul li::before {
+      content: '\25B6';
+      /* Add content: \2022 is the CSS Code/unicode for a bullet */
+      color: #f1ee0c;
+      /* Change the color */
+      font-weight: bold;
+      /* If you want it to be bold */
+      display: inline-block;
+      /* Needed to add space between the bullet and the text */
+      width: 1em;
+      /* Also needed for space (tweak if needed) */
+      margin-left: -1em;
+      /* Also needed for space (tweak if needed) */ }
+    section.project_details aside ul > * {
+      margin-bottom: 0.8rem;
+      margin-left: 1rem; }
+    section.project_details aside a {
+      font-family: Acme, sans-serif;
+      text-decoration: underline; }
+  section.project_details div.project_container {
+    background-color: rgba(255, 255, 255, 0.233);
+    width: 60vw;
+    padding: 1rem;
+    border-radius: 10px; }
+    section.project_details div.project_container img {
+      width: 55vw;
+      height: 70vh;
+      border-radius: 10px; }
+    section.project_details div.project_container .project_heading {
+      margin-top: 3rem; }
+    section.project_details div.project_container .project_description {
+      font-family: Acme, sans-serif;
+      padding: 2rem;
+      text-align: start;
+      letter-spacing: 1.5px;
+      word-spacing: 3px; }
+    section.project_details div.project_container ol {
+      padding: 1rem 3rem; }
+      section.project_details div.project_container ol > * {
+        margin-bottom: 1rem;
+        text-align: start; }
+
+#projects .cards {
+  display: flex;
+  justify-content: space-evenly;
+  width: 80vw;
+  margin: auto; }
+  #projects .cards .row {
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center; }
+    #projects .cards .row::after {
+      content: '';
+      display: table;
+      clear: both; }
+  #projects .cards .card {
+    perspective: 1500px;
+    text-transform: uppercase;
+    position: relative;
+    width: 23vw;
+    height: 70vh;
+    margin-bottom: 3.5rem; }
+    #projects .cards .card img {
+      filter: brightness(75%);
+      border-radius: 15px;
+      width: 90%;
+      margin-top: 3rem;
+      margin-bottom: 2rem; }
+    #projects .cards .card__side {
+      border-radius: 5px;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transition: all 0.8s ease;
+      backface-visibility: hidden; }
+      #projects .cards .card__side .project_name {
+        font-size: 1.2rem;
+        margin-bottom: 0.8rem;
+        font-family: Acme, sans-serif; }
+      #projects .cards .card__side p {
+        font-family: caveat, cursive;
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
+        margin-top: 5rem;
+        margin-bottom: 2rem; }
+      #projects .cards .card__side--front {
+        background-color: #ffffff2d;
+        border-radius: 20px; }
+      #projects .cards .card__side--back {
+        transform: rotateY(180deg);
+        background-color: #f1d94e5e;
+        border-radius: 20px; }
+    #projects .cards .card .project_description {
+      margin-top: 0.5rem;
+      font-family: 'Caveat', cursive;
+      font-size: 1.2rem; }
+    #projects .cards .card a {
+      background: rgba(255, 198, 9, 0.979);
+      padding: 0.6rem 1.3rem;
+      border-radius: 10px;
+      backdrop-filter: blur(30px); }
+    #projects .cards .card:hover .card__side--front {
+      transform: rotateY(-180deg); }
+    #projects .cards .card:hover .card__side--back {
+      transform: rotateY(0); }
+
+@keyframes scaleAnimation {
+  0% {
+    opacity: 0;
+    transform: scale(1.5); }
+  100% {
+    opacity: 1;
+    transform: scale(1); } }
+@keyframes drawCircle {
+  0% {
+    stroke-dashoffset: 151px; }
+  100% {
+    stroke-dashoffset: 0; } }
+@keyframes drawCheck {
+  0% {
+    stroke-dashoffset: 36px; }
+  100% {
+    stroke-dashoffset: 0; } }
+@keyframes fadeOut {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+#successAnimationCircle {
+  stroke-dasharray: 151px 151px;
+  stroke: #fff; }
+
+#successAnimationCheck {
+  stroke-dasharray: 36px 36px;
+  stroke: #fff; }
+
+#successAnimationResult {
+  fill: #fff;
+  opacity: 0; }
+
+#successAnimation.animated {
+  animation: 1s ease-out 0s 1 both scaleAnimation; }
+  #successAnimation.animated #successAnimationCircle {
+    animation: 1s cubic-bezier(0.77, 0, 0.175, 1) 0s 1 both drawCircle, 0.3s linear 0.9s 1 both fadeOut; }
+  #successAnimation.animated #successAnimationCheck {
+    animation: 1s cubic-bezier(0.77, 0, 0.175, 1) 0s 1 both drawCheck, 0.3s linear 0.9s 1 both fadeOut; }
+  #successAnimation.animated #successAnimationResult {
+    animation: 0.3s linear 0.9s both fadeIn; }
+
+section.animation {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
 @media only screen and (max-width: 480px) {
+  body {
+    background-image: linear-gradient(to bottom, #ffca58 0%, #8b49ff, rgba(241, 199, 106, 0.774), #de58ff); }
+
+  .container {
+    background: rgba(236, 226, 226, 0.229); }
+
   .hamburger {
     display: block;
     position: fixed;
@@ -390,14 +585,16 @@ main {
   .hide {
     display: block; }
 
+  .hiding {
+    display: none; }
+
   nav {
     width: 95vw; }
+    nav .logo img {
+      width: 50px; }
 
   .nav__links {
     display: none; }
-
-  .container {
-    height: 100vh; }
 
   header {
     height: 90vh;
@@ -407,11 +604,13 @@ main {
     opacity: 1;
     padding: 1rem; }
     header img {
-      width: 45vw;
-      margin-top: -53%; }
+      width: 75vw;
+      margin-top: -69%; }
+    header div#about_container {
+      height: initial; }
     header > div {
       position: absolute;
-      top: 7%;
+      top: 8.5%;
       left: 50%;
       z-index: 1;
       transform: translate(-50%, -50%); }
@@ -425,16 +624,21 @@ main {
         margin: auto; }
 
   .lolo {
-    margin-top: 5rem;
+    padding-top: 1.5rem;
     display: flex;
     flex-direction: column;
-    align-items: center; }
+    align-items: center;
+    position: relative; }
+    .lolo .close {
+      position: absolute;
+      font-size: 3rem;
+      color: black;
+      top: 50vh;
+      left: 35%; }
     .lolo > a {
-      margin-bottom: 2rem; }
-      .lolo > a:nth-of-type(2) {
-        margin-left: 8rem; }
-      .lolo > a:nth-of-type(3) {
-        margin-left: 16rem; }
+      margin-bottom: 2rem;
+      display: block;
+      font-size: 1.2rem; }
 
   .illustration {
     position: relative;
@@ -449,15 +653,24 @@ main {
       position: absolute;
       top: 20%;
       z-index: -1;
-      opacity: .5;
+      opacity: 0.3;
       width: 90vw; }
 
+  #services .head {
+    margin-top: 3rem;
+    margin-bottom: 3rem; }
   #services .cards {
-    grid-template-columns: 1fr 1fr; }
+    grid-template-columns: 1fr;
+    padding: 0; }
     #services .cards .card {
-      width: 40vw;
-      height: 60vh;
+      width: 60vw;
       margin: auto; }
+      #services .cards .card .project_name {
+        font-size: 1.3rem; }
+      #services .cards .card .project_description {
+        font-size: 1rem;
+        font-family: 'Shadows Into Light', cursive;
+        font-weight: bolder; }
 
   #projects .cards {
     flex-direction: column; }
@@ -467,9 +680,14 @@ main {
       margin: auto;
       margin-bottom: 1rem;
       padding: 1rem; }
+      #projects .cards .card .row:hover .buttons {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 1rem;
+        padding-top: 1rem; }
 
   footer {
-    height: 60vh; }
+    height: 50vh; }
     footer .footer_container {
       top: -2.5rem;
       left: 5vw;
@@ -479,6 +697,62 @@ main {
 
   footer .footer_container .footer_services {
     margin-left: 30vw;
-    margin-right: 2rem; } }
+    margin-right: 2rem; }
+
+  .new {
+    flex-direction: column;
+    position: relative; }
+    .new .contact_card {
+      width: 80vw;
+      margin: auto; }
+    .new img {
+      position: absolute;
+      top: 5%;
+      width: 100%;
+      display: none; }
+
+  main h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem; }
+  main section.team {
+    margin-bottom: 5rem; }
+    main section.team .cards {
+      margin: auto;
+      flex-direction: column;
+      align-items: center; }
+      main section.team .cards .card {
+        margin-right: 0;
+        width: 80%; }
+        main section.team .cards .card img {
+          width: 100%; }
+
+  section.project_details {
+    display: flex;
+    flex-direction: column; }
+    section.project_details div.project_container {
+      width: 100%; }
+      section.project_details div.project_container img {
+        width: 100%;
+        height: 30%;
+        border-radius: 10px; }
+      section.project_details div.project_container .project_description {
+        line-height: 20px;
+        text-align: center; }
+    section.project_details aside {
+      order: -1;
+      width: 100%;
+      height: fit-content;
+      margin-bottom: 2rem; }
+      section.project_details aside a {
+        margin-left: 1rem;
+        font-size: 1rem;
+        font-family: Acme, sans-serif; }
+      section.project_details aside .head {
+        text-align: center; }
+      section.project_details aside ul {
+        display: flex;
+        flex-wrap: wrap; }
+        section.project_details aside ul li {
+          margin-right: 0.5rem; } }
 
 /*# sourceMappingURL=style.css.map */
